@@ -1,4 +1,6 @@
-# function without parameters
+# functions
+
+## function without parameters
 
 def greet():
   print("Hello!!")

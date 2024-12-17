@@ -18,6 +18,7 @@ def sayHi(name):
 sayHi("Ava")
 sayHi("Eva")
 sayHi("Eve")
+sayHi("Guzel")
 '''
 
 ## function with library

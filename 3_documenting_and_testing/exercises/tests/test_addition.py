@@ -25,4 +25,3 @@ class TestTwoNumbers(unittest.TestCase):
         """It should raise AssertionError for non-integer input"""
         with self.assertRaises(AssertionError):
             two_numbers(2, "one")
-        

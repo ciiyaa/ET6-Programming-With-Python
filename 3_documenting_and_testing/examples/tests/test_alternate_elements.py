@@ -14,8 +14,7 @@ Author: Claude AI
 """
 
 import unittest
-from ..alternate_elements import alternate_elements
-
+from alternate_elements import alternate_elements
 class TestAlternateElements(unittest.TestCase):
     """Test suite for the alternate_elements function - contains buggy tests!"""
 
@@ -31,7 +30,7 @@ class TestAlternateElements(unittest.TestCase):
     def test_strings(self):
         """It should work with strings"""
         self.assertEqual(alternate_elements(['a', 'b', 'c', 'd']), ['a', 'c'])
-    
+
     # Edge cases
     def test_empty_list(self):
         """It should return empty list for empty input"""
@@ -40,11 +39,15 @@ class TestAlternateElements(unittest.TestCase):
     def test_single_element(self):
         """It should return single element list for single element input"""
         self.assertEqual(alternate_elements([1]), [1])
-    
     def test_two_elements(self):
         """It should return first element for two element input"""
         self.assertEqual(alternate_elements([1, 2]), [1])
-    
+            
+    # My tests
+    def test_nested_lists(self):
+        """It should handle lists containing other lists as elements"""
+        self.assertEqual(alternate_elements([[1, 2], [3, 4], [5, 6], [7, 8]]), [[1, 2], [5, 6]])
+        
     # Defensive tests
     def test_none_input(self):
         """It should raise AssertionError for None input"""

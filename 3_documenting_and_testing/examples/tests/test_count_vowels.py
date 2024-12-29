@@ -29,6 +29,10 @@ class TestCountVowels(unittest.TestCase):
         """It should return the correct count ignoring numbers and symbols"""
         self.assertEqual(count_vowels("The qu1ck br@wn f0x!"), 2)
 
+    def test_repeated_vowels(self):
+        """It should count all repeated vowels"""
+        self.assertEqual(count_vowels("aaaaeeeeiiiiouuu"), 16)
+
     def test_not_string(self):
         """It should raise AssertionError for non-string input"""
         with self.assertRaises(AssertionError):

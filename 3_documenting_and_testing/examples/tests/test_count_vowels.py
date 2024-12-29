@@ -33,6 +33,19 @@ class TestCountVowels(unittest.TestCase):
         """It should count all repeated vowels"""
         self.assertEqual(count_vowels("aaaaeeeeiiiiouuu"), 16)
 
+    def test_single_vowel(self):
+        """It should return 1 for a single vowel"""
+        self.assertEqual(count_vowels("a"), 1)
+
+    def test_single_non_vowel(self):
+        """It should return 0 for a single non-vowel"""
+        self.assertEqual(count_vowels("x"), 0)
+
+    # My edge cases
+    def test_spaces_only(self):
+        """It should return 0 for strings with only spaces"""
+        self.assertEqual(count_vowels("   "), 0)
+
     def test_not_string(self):
         """It should raise AssertionError for non-string input"""
         with self.assertRaises(AssertionError):

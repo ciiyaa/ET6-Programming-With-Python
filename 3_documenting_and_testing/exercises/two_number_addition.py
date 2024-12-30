@@ -10,7 +10,6 @@ Module contents:
 def two_number_addition(a: int, b: int) -> int:
     """Computes and returns the sum of two integers.
 
-
     Parameters:
         a: int, the first number to add
         b: int, the second number to add

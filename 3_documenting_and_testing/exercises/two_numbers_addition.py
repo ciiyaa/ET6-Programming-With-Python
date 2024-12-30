@@ -7,7 +7,7 @@ Module contents:
     - two_number_addition: Computes and returns the sum of two integers.
 """
 
-def two_number_addition(a: int, b: int) -> int:
+def two_numbers_addition(a: int, b: int) -> int:
     """Computes and returns the sum of two integers.
 
     Parameters:

@@ -20,11 +20,11 @@ def two_numbers_addition(a: int, b: int) -> int:
         TypeError: If either argument is not an integer.
 
     Examples:
-    >>> two_number_addition(1, 2)
+    >>> two_numbers_addition(1, 2)
     3
-    >>> two_number_addition(-1, -2)
+    >>> two_numbers_addition(-1, -2)
     -3
-    >>> two_number_addition(0, 5)
+    >>> two_numbers_addition(0, 5)
     5
     """
     assert isinstance(a, int), "First input must be an integer"

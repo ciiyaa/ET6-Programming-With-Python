@@ -7,12 +7,16 @@ Module contents:
     - mystery_2: Accepts a string and returns its length.
 """
 def string_length(a):
-    """Accepts a string and returns its length.
+    """Accepts a string and returns its length, non-alphanumeric
+    numbers, and spaces and valid. Returns NONE if string is empty
 
     Parameters:
         a: str, a string to find the length of
 
     Returns -> int: length of characters
+
+    Raises:
+        AssertionError: If input is not a string
 
     Examples:
     >>> string_length("abcd")
@@ -22,8 +26,8 @@ def string_length(a):
     >>> string_length("a b c")
     5
     """
+    assert isinstance(a,str), "Input must be a string"
     if len(a) == 0:
         return None
 
     return len(a)
-print (string_length("abc12@2"))

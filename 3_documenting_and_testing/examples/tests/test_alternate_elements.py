@@ -31,7 +31,7 @@ class TestAlternateElements(unittest.TestCase):
 
     def test_strings(self):
         """It should work with strings"""
-        self.assertEqual(alternate_elements(["a", "b", "c", "d"]), ["a", "c"])
+        self.assertEqual(alternate_elements(['a', 'b', 'c', 'd']), ['a', 'c'])
 
     # Edge cases
     def test_empty_list(self):

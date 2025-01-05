@@ -16,7 +16,7 @@ import unittest
 
 # --- imports & test class after documenting and testing ---
 
-from ..fibonacci_list import fibonacci_list
+from fibonacci_list import fibonacci_list
 
 
 class TestFibonacciList(unittest.TestCase):
@@ -24,8 +24,8 @@ class TestFibonacciList(unittest.TestCase):
 
     def test_0(self):
         """It should evaluate 0 to []"""
-        actual = fibonacci_list(0) # call function with test arguments
-        expected = [] # hand-write the expected return value
+        actual = fibonacci_list(0)  # call function with test arguments
+        expected = []  # hand-write the expected return value
         self.assertEqual(actual, expected)
 
     def test_1(self):

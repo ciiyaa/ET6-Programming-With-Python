@@ -29,8 +29,8 @@ def two_numbers_compare(a: int, b: int) -> int:
     3
     >>> two_numbers_compare(10, 10)
     20
-    >>> two_numbers_compare(4.5, 2.3)
-    2.3
+    >>> two_numbers_compare(4, 2)
+    2
     """
     assert isinstance(a, (int, float)) and isinstance(
         b, (int, float)

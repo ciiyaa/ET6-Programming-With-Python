@@ -9,7 +9,7 @@ Module contents:
 """
 
 
-def two_numbers_compare(a, b):
+def two_numbers_compare(a: int, b: int) -> int:
     """Compares two numbers and returns:
         - the smaller number if they are not equal, or
         - their sum if they are equal.
@@ -25,11 +25,11 @@ def two_numbers_compare(a, b):
         AssertionError: If inputs are not int or float.
 
     Examples:
-    >>> mystery_3(3, 5)
+    >>> two_numbers_compare(3, 5)
     3
-    >>> mystery_3(10, 10)
+    >>> two_numbers_compare(10, 10)
     20
-    >>> mystery_3(4.5, 2.3)
+    >>> two_numbers_compare(4.5, 2.3)
     2.3
     """
     assert isinstance(a, (int, float)) and isinstance(

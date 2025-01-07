@@ -15,14 +15,14 @@ def two_numbers_compare(a: int, b: int) -> int:
         - their sum if they are equal.
 
     Parameters:
-        a (int | float): The first number.
-        b (int | float): The second number.
+        a (int): The first number.
+        b (int): The second number.
 
     Returns:
-        int | float: The smaller number, or their sum if they are equal.
+        int: The smaller number, or their sum if they are equal.
 
     Raises:
-        AssertionError: If inputs are not int or float.
+        AssertionError: If inputs are not int.
 
     Examples:
     >>> two_numbers_compare(3, 5)
@@ -32,9 +32,7 @@ def two_numbers_compare(a: int, b: int) -> int:
     >>> two_numbers_compare(4, 2)
     2
     """
-    assert isinstance(a, (int, float)) and isinstance(
-        b, (int, float)
-    ), "Inputs must be integers or floats"
+    assert isinstance(a, (int)) and isinstance(b, (int)), "Inputs must be integers"
 
     if a < b:
         return a

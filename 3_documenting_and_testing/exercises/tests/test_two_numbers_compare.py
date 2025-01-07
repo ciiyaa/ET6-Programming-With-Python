@@ -6,6 +6,7 @@ Test module for two_numbers_compare function.
 Test categories:
     - Standard cases: Typical integers with different relationships.
     - Edge cases: Negative numbers.
+    - Defensive tests: Non-numeric inputs.
 """
 
 import unittest
@@ -45,3 +46,14 @@ class TestTwoNumbersCompare(unittest.TestCase):
     def test_negative_negative(self):
         """Should handle negative numbers correctly"""
         self.assertEqual(two_numbers_compare(-3, -5), -5)
+
+    # Defensive Assertions
+    def test_invalid_type_a(self):
+        """Should raise an AssertionError for invalid a"""
+        with self.assertRaises(AssertionError):
+            two_numbers_compare("3", 5)
+
+    def test_invalid_type_b(self):
+        """Should raise an AssertionError for invalid b"""
+        with self.assertRaises(AssertionError):
+            two_numbers_compare(5, "2")

@@ -15,8 +15,7 @@ def generate_sequence(a: int) -> list:
     Parameters:
         a (int): The length of the list to generate.
 
-    Returns:
-        list: A list of integers starting from 0 up to a-1.
+    Returns -> list: A list of integers starting from 0 up to a-1.
 
     Raises:
         AssertionError: If input is not a non-negative integer.

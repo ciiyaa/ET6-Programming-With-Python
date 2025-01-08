@@ -18,8 +18,7 @@ def two_numbers_compare(a: int, b: int) -> int:
         a (int): The first number.
         b (int): The second number.
 
-    Returns:
-        int: The smaller number, or their sum if they are equal.
+    Returns -> int: The smaller number, or their sum if they are equal.
 
     Raises:
         AssertionError: If inputs are not int.

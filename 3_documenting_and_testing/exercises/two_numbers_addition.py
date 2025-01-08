@@ -7,17 +7,18 @@ Module contents:
     - two_number_addition: Computes and returns the sum of two integers.
 """
 
+
 def two_numbers_addition(a: int, b: int) -> int:
     """Computes and returns the sum of two integers.
 
     Parameters:
-        a: int, the first number to add
-        b: int, the second number to add
+        a (int): The first number to add
+        b (int): The second number to add
 
     Returns -> int: the sum of a and b
 
     Raises:
-        TypeError: If either argument is not an integer.
+        AssertionError: If either argument is not an integer.
 
     Examples:
     >>> two_numbers_addition(1, 2)

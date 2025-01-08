@@ -7,6 +7,7 @@ Module contents:
     - count_characters: Accepts a string or list and returns its length.
 """
 
+
 def count_characters(a):
     """Accepts a string or list and returns its length. If input is empty,
     returns None.
@@ -14,8 +15,7 @@ def count_characters(a):
     Parameters:
         a (str | list): A string or list to find the length of.
 
-    Returns:
-        int | None: The length of the input, or None if it is empty.
+    Returns -> int | None: The length of the input, or None if it is empty.
 
     Raises:
         AssertionError: If input is not a string or list.

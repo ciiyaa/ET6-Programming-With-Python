@@ -8,8 +8,10 @@ Test categories:
     - Edge cases: white-spaces, nested lists, empty strings and lists
     - Defensive tests: Numbers, Bool assertions
 """
+
 import unittest
 from ..count_characters import count_characters
+
 
 class TestCountCharacters(unittest.TestCase):
     """Test the count_characters function"""
@@ -21,7 +23,7 @@ class TestCountCharacters(unittest.TestCase):
 
     def test_minimal_string_input(self):
         """Should return NONE for empty strings"""
-        self.assertEqual(count_characters(''), None)
+        self.assertEqual(count_characters(""), None)
 
     def test_string_length_4_chars(self):
         """Test with a string of 4 characters"""
@@ -31,7 +33,7 @@ class TestCountCharacters(unittest.TestCase):
         """Test with a string of numbers"""
         self.assertEqual(count_characters("12345"), 5)
 
-    #Edge Cases:
+    # Edge Cases:
     def test_string_length_with_spaces(self):
         """Test with a string containing spaces"""
         self.assertEqual(count_characters("hello world"), 11)

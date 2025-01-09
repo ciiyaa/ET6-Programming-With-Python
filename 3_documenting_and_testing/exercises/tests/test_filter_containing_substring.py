@@ -6,6 +6,7 @@ Test module for the filter_containing_substring function.
 Test categories:
     - Standard cases: Matching and non-matching substrings.
     - Edge cases: Empty input lists or substrings.
+    - Defensive tests: Invalid input type assertions.
 """
 
 import unittest
@@ -52,3 +53,19 @@ class TestFilterContainingSubstring(unittest.TestCase):
     def test_empty_list_and_substring(self):
         """Should return an empty list when both inputs are empty"""
         self.assertEqual(filter_containing_substring([], ""), [])
+
+    # Defensive Tests
+    def test_non_string_elements(self):
+        """Should raise an AssertionError when the list contains non-string elements"""
+        with self.assertRaises(AssertionError):
+            filter_containing_substring([1, 2, 3], "1")
+
+    def test_invalid_type_first_argument(self):
+        """Should raise an AssertionError when the first argument is not a list"""
+        with self.assertRaises(AssertionError):
+            filter_containing_substring("not_a_list", "a")
+
+    def test_invalid_type_second_argument(self):
+        """Should raise an AssertionError when the second argument is not a string"""
+        with self.assertRaises(AssertionError):
+            filter_containing_substring(["apple", "banana"], 5)

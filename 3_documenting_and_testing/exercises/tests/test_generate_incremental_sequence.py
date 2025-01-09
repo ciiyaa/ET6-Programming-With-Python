@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Test module for the mystery_6 function.
+Test module for the generate_incremental_sequence function.
 
 Test categories:
     - Standard cases: Generate sequences of various lengths starting from different values.

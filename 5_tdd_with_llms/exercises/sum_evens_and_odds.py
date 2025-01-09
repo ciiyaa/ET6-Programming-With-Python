@@ -24,6 +24,10 @@ def sum_evens_and_odds(numbers: list) -> dict:
     >>> sum_evens_and_odds([])
     {'even': 0, 'odd': 0}
     """
+    assert isinstance(numbers, list), "numbers must be a list"
+    assert all(
+        isinstance(n, (int, float)) for n in numbers
+    ), "all elements must be numbers"
 
     evens = sum(n for n in numbers if n % 2 == 0)
     odds = sum(n for n in numbers if n % 2 != 0)

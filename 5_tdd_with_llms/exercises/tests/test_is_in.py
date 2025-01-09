@@ -7,7 +7,7 @@ Contains tests to help identify bugs in the implementation.
 Test categories:
     - Standard cases: item in one, item in both, item in none
     - Edge cases: empty lists
-
+    - Defensive tests: invalid inputs
 """
 
 import unittest
@@ -42,3 +42,19 @@ class TestIsIn(unittest.TestCase):
     def test_empty_list2(self):
         """It should return True if the second list is empty and the first contains the item"""
         self.assertTrue(is_in("apple", ["apple", "banana"], []))
+
+    # Defensive tests
+    def test_item_not_a_string(self):
+        """It should raise an AssertionError if the item is not a string"""
+        with self.assertRaises(AssertionError):
+            is_in(123, ["apple", "banana"], ["cherry", "grape"])
+
+    def test_list1_not_a_list(self):
+        """It should raise an AssertionError if the first argument is not a list"""
+        with self.assertRaises(AssertionError):
+            is_in("apple", "not_a_list", ["apple", "cherry"])
+
+    def test_list2_not_a_list(self):
+        """It should raise an AssertionError if the second argument is not a list"""
+        with self.assertRaises(AssertionError):
+            is_in("apple", ["apple", "banana"], "not_a_list")

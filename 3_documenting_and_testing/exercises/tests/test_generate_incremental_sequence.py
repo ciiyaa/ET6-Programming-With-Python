@@ -6,6 +6,7 @@ Test module for the mystery_6 function.
 Test categories:
     - Standard cases: Generate sequences of various lengths starting from different values.
     - Edge cases: Zero-length sequences, negative starting values, and large inputs.
+    - Defensive tests: Non-integer inputs and invalid values.
 """
 
 import unittest
@@ -41,3 +42,19 @@ class TestGenerateIncrementalSequence(unittest.TestCase):
     def test_minimal_input(self):
         """Should return an empty list for minimal inputs"""
         self.assertEqual(generate_incremental_sequence(0, 0), [])
+
+    # Defensive Tests
+    def test_invalid_type_a_not_integer(self):
+        """Should raise an AssertionError if `a` is not an integer"""
+        with self.assertRaises(AssertionError):
+            generate_incremental_sequence("string", 0)
+
+    def test_invalid_type_b_not_integer(self):
+        """Should raise an AssertionError if `b` is not an integer"""
+        with self.assertRaises(AssertionError):
+            generate_incremental_sequence(5, "string")
+
+    def test_negative_a(self):
+        """Should raise an AssertionError if `a` is negative"""
+        with self.assertRaises(AssertionError):
+            generate_incremental_sequence(-1, 0)

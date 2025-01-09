@@ -28,6 +28,8 @@ def generate_incremental_sequence(a: int, b: int) -> list:
     >>> generate_incremental_sequence(2, -1)
     [-1, 0]
     """
+    assert isinstance(a, int) and isinstance(b, int), "Inputs must be integers"
+    assert a >= 0, "`a` must be a non-negative integer"
     if a == 0:
         return []
 

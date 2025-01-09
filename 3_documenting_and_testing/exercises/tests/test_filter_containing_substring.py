@@ -5,6 +5,7 @@ Test module for the filter_containing_substring function.
 
 Test categories:
     - Standard cases: Matching and non-matching substrings.
+    - Edge cases: Empty input lists or substrings.
 """
 
 import unittest
@@ -36,10 +37,18 @@ class TestFilterContainingSubstring(unittest.TestCase):
             filter_containing_substring(["dog", "horse", "rabbit"], "cat"), []
         )
 
-    def test_minimal_input_list(self):
-        """"""
-        self.assertEqual(filter_containing_substring([], []), [])
+    # Edge Cases
+    def test_empty_list(self):
+        """Should return an empty list when the input list is empty"""
+        self.assertEqual(filter_containing_substring([], "cat"), [])
 
-    def test_minimal_input_string(self):
-        """"""
-        self.assertEqual(filter_containing_substring("", ""), [])
+    def test_empty_substring(self):
+        """Should return all strings when the substring is empty"""
+        self.assertEqual(
+            filter_containing_substring(["one", "two", "three"], ""),
+            ["one", "two", "three"],
+        )
+
+    def test_empty_list_and_substring(self):
+        """Should return an empty list when both inputs are empty"""
+        self.assertEqual(filter_containing_substring([], ""), [])

@@ -18,6 +18,9 @@ def filter_containing_substring(a: list[str], b: str) -> list[str]:
 
     Returns -> list[str]: A list of strings from the input list that contain the substring.
 
+    Raises:
+        AssertionError: If inputs are not of the expected types.
+
     Examples:
     >>> filter_containing_substring(["apple", "banana", "cherry"], "ana")
     ['banana']
@@ -26,6 +29,10 @@ def filter_containing_substring(a: list[str], b: str) -> list[str]:
     >>> filter_containing_substring(["one", "two", "three"], "")
     ['one', 'two', 'three']
     """
+    assert isinstance(a, list) and all(
+        isinstance(s, str) for s in a
+    ), "First argument must be a list of strings"
+    assert isinstance(b, str), "Second argument must be a string"
     c = []
     for d in a:
         if b in d:

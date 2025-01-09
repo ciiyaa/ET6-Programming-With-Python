@@ -17,7 +17,10 @@ def is_in_one(item: str, list1: list, list2: list) -> bool:
     Returns:
         bool -> True if the item is in only one of the lists, False otherwise
 
-
+    Raises:
+        AssertionError: if the item is not a string
+        AssertionError: if list1 is not a list
+        AssertionError: if list2 is not a list
     >>> is_in_one("Toyota", ["Toyota", "Ford"], ["Cadillac", "Audi"])
     True
 
@@ -27,5 +30,8 @@ def is_in_one(item: str, list1: list, list2: list) -> bool:
     >>> is_in_one("BMW", ["Toyota", "Ford"], ["Cadillac", "Audi"])
     False
     """
+    assert isinstance(item, str), "item must be a string"
+    assert isinstance(list1, list), "list1 must be a list"
+    assert isinstance(list2, list), "list2 must be a list"
 
     return (item in list1) != (item in list2)

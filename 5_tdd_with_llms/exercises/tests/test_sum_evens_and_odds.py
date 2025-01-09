@@ -7,7 +7,7 @@ Contains tests to ensure correct functionality of the implementation.
 Test categories:
     - Standard cases: typical lists with mixed numbers
     - Edge cases: empty list, single element lists
-
+    - Defensive tests: invalid inputs
 """
 
 import unittest
@@ -46,3 +46,19 @@ class TestSumEvensAndOdds(unittest.TestCase):
     def test_zero_in_list(self):
         """It should correctly handle a list containing zero"""
         self.assertEqual(sum_evens_and_odds([0, 1, 2]), {"even": 2, "odd": 1})
+
+    # Defensive tests
+    def test_non_list_input(self):
+        """It should raise an AssertionError if the input is not a list"""
+        with self.assertRaises(AssertionError):
+            sum_evens_and_odds(123)
+
+    def test_list_with_non_numbers(self):
+        """It should raise an AssertionError if the list contains non-number elements"""
+        with self.assertRaises(AssertionError):
+            sum_evens_and_odds([1, "a", 3])
+
+    def test_mixed_type_list(self):
+        """It should raise an AssertionError if the list contains mixed types"""
+        with self.assertRaises(AssertionError):
+            sum_evens_and_odds([1, 2, "three", 4.0])

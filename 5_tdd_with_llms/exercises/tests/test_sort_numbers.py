@@ -7,6 +7,7 @@ Contains tests to ensure correct functionality of the implementation.
 Test categories:
     - Standard cases: lists with positive, negative, and mixed numbers
     - Edge cases: empty list, single element list
+    - Defensive tests: invalid inputs
 """
 
 import unittest
@@ -45,3 +46,19 @@ class TestSortNumbers(unittest.TestCase):
     def test_single_element_list(self):
         """It should return the same single element list"""
         self.assertEqual(sort_numbers([42]), [42])
+
+    # Defensive Tests
+    def test_non_list_input(self):
+        """It should raise an AssertionError if the input is not a list"""
+        with self.assertRaises(AssertionError):
+            sort_numbers(123)
+
+    def test_list_with_non_numbers(self):
+        """It should raise an AssertionError if the list contains non-number elements"""
+        with self.assertRaises(AssertionError):
+            sort_numbers([1, "a", 3])
+
+    def test_mixed_type_list(self):
+        """It should raise an AssertionError if the list contains mixed types"""
+        with self.assertRaises(AssertionError):
+            sort_numbers([1, 2, "three", 4.0])

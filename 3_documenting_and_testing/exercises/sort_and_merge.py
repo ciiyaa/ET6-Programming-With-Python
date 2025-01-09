@@ -8,7 +8,7 @@ Module contents:
 """
 
 
-def sort_and_merge(a, b):
+def sort_and_merge(a: list, b: list) -> list:
     """Sorts and merges two lists by moving all elements from `a` to `b` in sorted order.
 
     Parameters:

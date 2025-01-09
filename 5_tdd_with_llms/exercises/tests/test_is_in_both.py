@@ -18,7 +18,7 @@ from ..is_in_both import is_in_both
 class TestIsInBoth(unittest.TestCase):
     """Test the is_in_both function"""
 
-    # Standard Cases
+    # Standard Tests
     def test_item_in_both_lists(self):
         """It should return True if the item is in both lists"""
         self.assertTrue(is_in_both("apple", ["apple", "banana"], ["apple", "cherry"]))
@@ -31,7 +31,7 @@ class TestIsInBoth(unittest.TestCase):
         """It should return False if the item is in neither list"""
         self.assertFalse(is_in_both("orange", ["apple", "banana"], ["cherry", "grape"]))
 
-    # Edge Cases
+    # Edge Tests
     def test_empty_lists(self):
         """It should return False if both lists are empty"""
         self.assertFalse(is_in_both("apple", [], []))
@@ -44,7 +44,7 @@ class TestIsInBoth(unittest.TestCase):
         """It should return False if the second list is empty"""
         self.assertFalse(is_in_both("apple", ["apple", "banana"], []))
 
-    # Defensive tests
+    # Defensive Tests
     def test_item_not_a_string(self):
         """It should raise an AssertionError if the item is not a string"""
         with self.assertRaises(AssertionError):

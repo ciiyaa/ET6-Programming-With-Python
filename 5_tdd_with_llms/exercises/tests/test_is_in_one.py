@@ -45,7 +45,7 @@ class TestIsInOne(unittest.TestCase):
         """It should return True if the second list is empty and the first is not"""
         self.assertTrue(is_in_one("BMW", ["BMW", "Cadillac"], []))
 
-    # Defensive tests
+    # Defensive Tests
     def test_item_not_a_string(self):
         """It should raise an AssertionError if the item is not a string"""
         with self.assertRaises(AssertionError):

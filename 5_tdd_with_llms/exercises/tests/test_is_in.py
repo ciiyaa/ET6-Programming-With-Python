@@ -30,7 +30,7 @@ class TestIsIn(unittest.TestCase):
         """It should return False if the item is in neither list"""
         self.assertFalse(is_in("orange", ["apple", "banana"], ["cherry", "grape"]))
 
-    # Edge Cases
+    # Edge Tests
     def test_empty_lists(self):
         """It should return False if both lists are empty"""
         self.assertFalse(is_in("apple", [], []))

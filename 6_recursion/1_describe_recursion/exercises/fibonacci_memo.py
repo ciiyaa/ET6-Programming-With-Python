@@ -11,20 +11,20 @@ def fibonacci(n: int, memo: dict = {}) -> int:
         n == 0  -> return 0
 
     base case 2:
-
+        n == 1  -> return 1
     base case 3:
-
+        if n in memo  -> return memo[n]
     recursive case:
 
     """
     if n == 0:  # base case 1
         return 0
 
-    if n == 1:  #
-        return 1  #
+    if n == 1:  # base case 2
+        return 1
 
-    if n in memo:  #
-        return memo[n]  #
+    if n in memo:  # base case 3
+        return memo[n]
 
     #
     left_recursion = fibonacci(n - 1, memo)
@@ -40,3 +40,6 @@ def fibonacci(n: int, memo: dict = {}) -> int:
 
 # write some test cases!
 print(fibonacci(0), "should be", 0)
+print(fibonacci(1), "should be", 1)
+print(fibonacci(2), "should be", 1)
+print(fibonacci(3), "should be", 2)

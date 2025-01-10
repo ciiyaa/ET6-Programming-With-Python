@@ -32,6 +32,3 @@ def is_in_both(item: str, list1: list, list2: list) -> bool:
     assert isinstance(list2, list), "list2 must be a list"
 
     return item in list1 and item in list2
-
-
-print(is_in_both("Banana", ["Banana", "Organe"], ["Cheery", "Banana"]))
